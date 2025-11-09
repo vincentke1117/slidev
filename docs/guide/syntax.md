@@ -145,6 +145,7 @@ More about code blocks:
 <LinkCard link="features/monaco-editor" />
 <LinkCard link="features/monaco-run" />
 <LinkCard link="features/monaco-write" />
+<LinkCard link="features/livecode" />
 <LinkCard link="features/shiki-magic-move" />
 <LinkCard link="features/twoslash" />
 <LinkCard link="features/import-snippet" />

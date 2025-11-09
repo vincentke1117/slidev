@@ -11,7 +11,12 @@ export const slideWidth = computed(() => configs.canvasWidth)
 
 // To honor the aspect ratio more as possible, we need to approximate the height to the next integer.
 // Doing this, we will prevent on print, to create an additional empty white page after each page.
-export const slideHeight = computed(() => Math.ceil(slideWidth.value / slideAspect.value))
+export const slideHeight = computed(() => {
+  const configured = configs.canvasHeight
+  if (configured != null)
+    return configured
+  return Math.ceil(slideWidth.value / slideAspect.value)
+})
 
 export const themeVars = computed(() => {
   return objectMap(configs.themeConfig || {}, (k, v) => [`--slidev-theme-${k}`, v])

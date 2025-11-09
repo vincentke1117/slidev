@@ -130,6 +130,34 @@ routeAlias: solutions
 # Now some solutions!
 ```
 
+## `LiveCode`
+
+Render interactive HTML, CSS, and JavaScript snippets inside an isolated iframe.
+
+### Usage
+
+````md
+```livecode { height: 360, autoResize: true }
+<div id="app"></div>
+
+<style>
+  body { font-family: sans-serif; }
+</style>
+
+<script>
+  document.getElementById('app').textContent = 'Hello iframe'
+</script>
+```
+````
+
+Props:
+
+- `width` (`number | string`, default: `'100%'`): Iframe width. Numbers are interpreted as pixels.
+- `height` (`number | string`, default: `'400px'`): Iframe height. Numbers are interpreted as pixels.
+- `autoResize` (`boolean`, default: `false`): Automatically grows the iframe height to match its rendered content.
+
+The HTML, CSS, and JavaScript provided in the code block are executed inside a sandboxed iframe.
+
 ## `PoweredBySlidev`
 
 Renders "Powered by Slidev" with a link to the Slidev website.

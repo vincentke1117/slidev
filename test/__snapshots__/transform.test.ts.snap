@@ -36,6 +36,12 @@ h1 {
 "
 `;
 
+exports[`livecode 1`] = `
+"
+<LiveCode html-lz="DwEwlgbgBGILwCICGAHFCB8wD04IaA==" css-lz="EYewJgngBA3gUFKBbAhgJwOYEsB2AuKABgG44BfIA===" js-lz="MYewdgzgLgBApgGxgXhgExMArgWzmKAOgHM4oBRBOPAgIQE8BJNACgHIBDABy7YEoAUAEsAZjBaJBMeAkJQ4ADygBhcPIIoYbADJCAbnACEbIA==" v-bind="{ height: 360, autoResize: true }" />
+"
+`;
+
 exports[`mermaid 1`] = `
 "
 # Page 

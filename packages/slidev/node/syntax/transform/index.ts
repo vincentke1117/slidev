@@ -3,6 +3,7 @@ import setupTransformers from '../../setups/transformers'
 import { transformCodeWrapper } from './code-wrapper'
 import { transformPageCSS } from './in-page-css'
 import { transformKaTexWrapper } from './katex-wrapper'
+import { transformLiveCode } from './livecode'
 import { transformMagicMove } from './magic-move'
 import { transformMermaid } from './mermaid'
 import { transformMonaco } from './monaco'
@@ -21,6 +22,7 @@ export async function getMarkdownTransformers(options: ResolvedSlidevOptions): P
     ...extras.preCodeblock,
 
     transformMermaid,
+    transformLiveCode,
     transformPlantUml,
     options.data.features.monaco && transformMonaco,
 

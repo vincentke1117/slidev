@@ -44,7 +44,7 @@ export async function writeDrawings(options: ResolvedSlidevOptions, drawing: Rec
     return
 
   const width = options.data.config.canvasWidth
-  const height = Math.round(width / options.data.config.aspectRatio)
+  const height = options.data.config.canvasHeight
   const SVG_HEAD = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">`
 
   await fs.mkdir(dir, { recursive: true })

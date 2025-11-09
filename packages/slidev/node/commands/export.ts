@@ -610,7 +610,7 @@ export function getExportOptions(args: ExportArgs, options: ResolvedSlidevOption
     dark: dark || options.data.config.colorSchema === 'dark',
     routerMode: options.data.config.routerMode,
     width: options.data.config.canvasWidth,
-    height: Math.round(options.data.config.canvasWidth / options.data.config.aspectRatio),
+    height: options.data.config.canvasHeight,
     withClicks: withClicks ?? format === 'pptx',
     executablePath,
     withToc: withToc || false,

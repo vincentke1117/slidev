@@ -75,6 +75,8 @@ routerMode: history
 aspectRatio: 16/9
 # real width of the canvas, unit in px
 canvasWidth: 980
+# real height of the canvas, unit in px. When omitted it is inferred from width & aspect ratio
+canvasHeight: 551
 # used for theme customization, will inject root styles as `--slidev-theme-x` for attribute `x`
 themeConfig:
   primary: '#5d8392'

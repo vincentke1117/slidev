@@ -70,6 +70,7 @@ exports[`md parser > frontmatter.md > config 1`] = `
 exports[`md parser > frontmatter.md > features 1`] = `
 {
   "katex": false,
+  "livecode": false,
   "mermaid": false,
   "monaco": false,
   "tweet": false,
@@ -606,6 +607,7 @@ exports[`md parser > mdc.md > config 1`] = `
 exports[`md parser > mdc.md > features 1`] = `
 {
   "katex": false,
+  "livecode": false,
   "mermaid": false,
   "monaco": false,
   "tweet": false,
@@ -729,6 +731,7 @@ exports[`md parser > minimal.md > config 1`] = `
 exports[`md parser > minimal.md > features 1`] = `
 {
   "katex": false,
+  "livecode": false,
   "mermaid": false,
   "monaco": false,
   "tweet": false,
@@ -952,6 +955,7 @@ exports[`md parser > multi-entries.md > config 1`] = `
 exports[`md parser > multi-entries.md > features 1`] = `
 {
   "katex": true,
+  "livecode": false,
   "mermaid": false,
   "monaco": false,
   "tweet": true,

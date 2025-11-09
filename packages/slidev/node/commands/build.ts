@@ -91,7 +91,7 @@ export async function build(
         output: tempDir,
         range: '1',
         width: options.data.config.canvasWidth,
-        height: Math.round(options.data.config.canvasWidth / options.data.config.aspectRatio),
+        height: options.data.config.canvasHeight,
         routerMode: options.data.config.routerMode,
         waitUntil: 'networkidle',
         timeout: args.timeout || 30000,

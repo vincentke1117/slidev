@@ -274,6 +274,12 @@
           "markdownDescription": "The actual width for slides canvas.\nunit in px.",
           "default": "980"
         },
+        "canvasHeight": {
+          "type": "number",
+          "description": "The actual height for slides canvas. unit in px.",
+          "markdownDescription": "The actual height for slides canvas.\nunit in px.",
+          "default": "551"
+        },
         "selectable": {
           "type": "boolean",
           "description": "Controls whether texts in slides are selectable",

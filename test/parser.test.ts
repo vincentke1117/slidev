@@ -329,4 +329,45 @@ a.a.A.A
       }
     })
   }
+
+  describe('canvas height config', () => {
+    it('derives height from aspect ratio when not provided', () => {
+      const config = resolveConfig({
+        canvasWidth: 1280,
+        aspectRatio: '4:3',
+      } as any)
+
+      expect(config.canvasHeight).toEqual(Math.round(1280 / (4 / 3)))
+    })
+
+    it('derives aspect ratio from explicit height', () => {
+      const config = resolveConfig({
+        canvasWidth: 1024,
+        canvasHeight: 512,
+      } as any)
+
+      expect(config.canvasHeight).toEqual(512)
+      expect(config.aspectRatio).toEqual(1024 / 512)
+    })
+
+    it('respects theme defaults for explicit height', () => {
+      const config = resolveConfig({}, {
+        defaults: {
+          canvasWidth: 1000,
+          canvasHeight: 700,
+        },
+      } as any)
+
+      expect(config.canvasWidth).toEqual(1000)
+      expect(config.canvasHeight).toEqual(700)
+      expect(config.aspectRatio).toEqual(1000 / 700)
+    })
+
+    it('validates explicit height', () => {
+      expect(() => resolveConfig({
+        canvasWidth: 960,
+        canvasHeight: 0,
+      } as any)).toThrowError('[slidev] "canvasHeight" must be a positive number')
+    })
+  })
 })

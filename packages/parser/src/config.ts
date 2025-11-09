@@ -25,6 +25,7 @@ export function getDefaultConfig(): SlidevConfig {
     routerMode: 'history',
     aspectRatio: 16 / 9,
     canvasWidth: 980,
+    canvasHeight: Math.round(980 / (16 / 9)),
     exportFilename: '',
     selectable: false,
     themeConfig: {},
@@ -64,6 +65,10 @@ export function resolveConfig(headmatter: any, themeMeta: SlidevThemeMeta = {}, 
 
   const defaultConfig = getDefaultConfig()
 
+  const explicitCanvasHeight = themeMeta.defaults?.canvasHeight != null
+    || headmatter.config?.canvasHeight != null
+    || headmatter.canvasHeight != null
+
   const config: SlidevConfig = {
     ...defaultConfig,
     highlighter: themeHightlighter || defaultConfig.highlighter,
@@ -100,6 +105,17 @@ export function resolveConfig(headmatter: any, themeMeta: SlidevThemeMeta = {}, 
     config.colorSchema = themeColorSchema
 
   config.aspectRatio = parseAspectRatio(config.aspectRatio)
+
+  if (explicitCanvasHeight) {
+    if (config.canvasHeight == null)
+      throw new Error('[slidev] "canvasHeight" must be provided when specified explicitly')
+    if (config.canvasHeight <= 0)
+      throw new Error('[slidev] "canvasHeight" must be a positive number')
+    config.aspectRatio = config.canvasWidth / config.canvasHeight
+  }
+  else {
+    config.canvasHeight = Math.round(config.canvasWidth / config.aspectRatio)
+  }
 
   if (verify)
     verifyConfig(config, themeMeta)

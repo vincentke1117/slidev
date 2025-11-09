@@ -74,6 +74,7 @@ export const HEADMATTER_FIELDS = [
   'routerMode',
   'aspectRatio',
   'canvasWidth',
+  'canvasHeight',
   'themeConfig',
   'favicon',
   'plantUmlServer',

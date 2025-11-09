@@ -6,6 +6,7 @@ export interface ResolvedSlidevConfigSub {
   drawings: ResolvedDrawingsOptions
   fonts: ResolvedFontOptions
   aspectRatio: number
+  canvasHeight: number
 }
 
 export interface SlidevConfig extends

@@ -72,6 +72,7 @@ export function detectFeatures(code: string): SlidevDetectedFeatures {
     monaco: code.match(/\{monaco.*\}/) ? scanMonacoReferencedMods(code) : false,
     tweet: !!code.match(/<Tweet\b/),
     mermaid: !!code.match(/^```mermaid/m),
+    livecode: !!code.match(/^```livecode/m),
   }
 }
 

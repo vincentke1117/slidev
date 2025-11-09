@@ -118,6 +118,12 @@ export interface HeadmatterConfig extends TransitionOptions {
    */
   canvasWidth?: number
   /**
+   * The actual height for slides canvas.
+   * unit in px.
+   * When provided the aspect ratio will be inferred from width and height.
+   */
+  canvasHeight?: number
+  /**
    * Controls whether texts in slides are selectable
    *
    * @default true

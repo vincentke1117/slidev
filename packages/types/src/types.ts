@@ -93,6 +93,7 @@ export interface SlidevDetectedFeatures {
   }
   tweet: boolean
   mermaid: boolean
+  livecode: boolean
 }
 
 export interface SlidevMarkdown {

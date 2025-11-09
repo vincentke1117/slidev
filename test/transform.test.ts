@@ -1,6 +1,7 @@
 import { expect, it } from 'vitest'
 import { transformCodeWrapper } from '../packages/slidev/node/syntax/transform/code-wrapper'
 import { transformPageCSS } from '../packages/slidev/node/syntax/transform/in-page-css'
+import { transformLiveCode } from '../packages/slidev/node/syntax/transform/livecode'
 import { transformMermaid } from '../packages/slidev/node/syntax/transform/mermaid'
 import { transformPlantUml } from '../packages/slidev/node/syntax/transform/plant-uml'
 import { transformSlotSugar } from '../packages/slidev/node/syntax/transform/slot-sugar'
@@ -166,6 +167,30 @@ Alice <- Bob : Hello, too!
   // it seems the encode result of `plantuml-encoder` is different across platforms since Node 18
   // we may need to find a better way to test this
   // expect(result).toMatchSnapshot()
+})
+
+it('livecode', () => {
+  const ctx = createTransformContext(`
+\`\`\`livecode { height: 360, autoResize: true }
+<div id="app"></div>
+
+<style>
+body {
+  margin: 0;
+}
+</style>
+
+<script>
+const el = document.getElementById('app')
+if (el)
+  el.textContent = 'Live!'
+</script>
+\`\`\`
+`)
+
+  transformLiveCode(ctx)
+
+  expect(ctx.s.toString()).toMatchSnapshot()
 })
 
 it('external snippet', () => {
